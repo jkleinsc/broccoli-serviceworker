@@ -5,7 +5,7 @@ ServiceWorker generator for Broccoli and Ember.js.  Derived from [broccoli-manif
 
 For more details on ServiceWorker check out the following:
 * [ServiceWorker spec](https://slightlyoff.github.io/ServiceWorker/spec/service_worker/)
-* https://github.com/slightlyoff/ServiceWorker
+* [ServiceWorker GitHub repo](https://github.com/slightlyoff/ServiceWorker)
 * [Is ServiceWorker ready?](https://jakearchibald.github.io/isserviceworkerready/)
 
 Usage for Ember Cli
