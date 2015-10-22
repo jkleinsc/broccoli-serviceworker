@@ -31,6 +31,7 @@ ENV.serviceWorker = {
 ```
 
 Upgrade your `index.html` (see below) and you are done.
+The service worker bootstrap logic will be added to your index.html automatically, using contentFor hooks.
 
 Usage for Broccoli.js
 ---------------------
@@ -82,7 +83,8 @@ Files can be filtered using regular expressions.
 Upgrade your index.html
 -----------------------
 
-In order to use the generated serviceworker, you will need to register the serviceworker.  You can do so with the following code:
+In order to use the generated serviceworker, you will need to register the serviceworker. This is done automatically if using as an Ember.js addon.
+If you're not using Ember.js, you can use the following code:
 ```HTML
 <!DOCTYPE html>
 <html>
