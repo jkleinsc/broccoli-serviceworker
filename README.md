@@ -65,7 +65,8 @@ writeServiceWorker(completeTree, {
   ],
   dynamicCache: [
     '/api/todos'
-  ]
+  ],
+  skipWaiting: true
 });
 ```
 
