@@ -31,5 +31,8 @@
     "broccoli-merge-trees": "~0.1.4",
     "broccoli-writer": "~0.1.1",
     "serviceworker-cache-polyfill": "^3.0.0"
+  },
+  "devDependencies": {
+    "stringifile": "^0.1.1"
   }
 }
