@@ -30,7 +30,6 @@ ENV.serviceWorker = {
 };
 ```
 
-Upgrade your `index.html` (see below) and you are done.
 The service worker bootstrap logic will be added to your index.html automatically, using contentFor hooks.
 
 Usage for Broccoli.js
@@ -49,6 +48,7 @@ var completeTree = mergeTrees([appJs, appCss, publicFiles]);
 
 module.exports = mergeTrees([completeTree, writeServiceWorker((completeTree)]);
 ```
+Upgrade your `index.html` (see below) and you are done.
 
 Options
 -------
