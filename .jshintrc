@@ -1,3 +1,11 @@
 {
+  "predef": [
+    "toolbox",
+    "Request",
+    "logDebug",
+    "self",
+    "caches",
+    "Promise"
+  ],
   "node": true
 }
