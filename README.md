@@ -11,26 +11,45 @@ For more details on ServiceWorker check out the following:
 Usage for Ember Cli
 -------------------
 
-`npm install --save-dev broccoli-serviceworker`
+`ember install broccoli-serviceworker`
 
+###Configuration
+By default the service worker will be generated for production builds and the service worker registration logic will be added to your index.html automatically.  Additionally, you can further customize broccoli-serviceworker by setting configurations in your environment.js file:
 ```JavaScript
 //app/config/environment.js
 
 ENV.serviceWorker = {
   enabled: true,
-  serviceWorkerFile: "service-worker.js",
-  excludePaths: ['tests/', 'online.html',],
-  includePaths: ['/'],
+  debug: true,
+  precacheURLs: ['/mystaticresouce'],
+  excludePaths: ['test.*', 'robots.txt',],
   fallback: [
-    '/online.html offline.html'      
+    '/online.html /offline.html'
   ],
   dynamicCache: [
     '/api/todos'
-  ]
+  ],
+  includeRegistration: true,
+  serviceWorkerFile: "service-worker.js",
+  skipWaiting: true
 };
 ```
+The following options are available:
+* **enabled** - Generate service worker.  Defaults to true in production.
+* **debug** - Display debug messages in console.
+* **precacheURLs** - Array of URLs to precache and always serve from the cache.  broccoli-serviceworker will automatically add all Ember app resources (e.g. files in dist) as precached URLs unless explictly excluded in excludePaths.
+* **excludePaths** - Array of paths to exclude from precache.  Files can be filtered using regular expressions.
+```JavaScript
+{
+  excludePaths: ['index.html', new RegExp(/.\.map$/)],
+}
+```
+* **includeRegistration** -- Automatically add the service worker registration script using contentFor to place the script in body-footer.  Defaults to true.
+* **serviceWorkerFile** - Name of the service worker file to generate.  If **includeRegistration** is set to true, this setting is unused.  Defaults to *service-worker.js*.
+* **fallback** - Array of URLs with fallbacks when the resource isn't available via network or cache.
+* **dynamicCache** - List of URLs that should use a network first strategy that falls back to a cached version of the response if the network is unavailable.  For more details, see the details on [sw-toolbox's networkFirst strategy](https://github.com/GoogleChrome/sw-toolbox#user-content-toolboxnetworkfirst).
+* **skipWaiting** - Allows a simple page refresh to update the app.  Defaults to true.
 
-The service worker bootstrap logic will be added to your index.html automatically, using contentFor hooks.
 
 Usage for Broccoli.js
 ---------------------
@@ -53,16 +72,16 @@ Upgrade your `index.html` (see below) and you are done.
 Options
 -------
 
-You can pass some options as the second argument to `writeServiceWorker`:
+You can the [options specified above](#configuration) as the second argument to `writeServiceWorker`:
 
 ```JavaScript
 
 writeServiceWorker(completeTree, {
   serviceWorkerFile: "service-worker.js",
-  excludePaths: ['tests/', 'online.html',],
-  includePaths: ['/'],
+  excludePaths: ['test.*', 'online.html',],
+  precacheURLs: ['/api/offlineStates'],
   fallback: [
-    '/online.html offline.html'      
+    '/api/states /api/offlineStates'
   ],
   dynamicCache: [
     '/api/todos'
@@ -70,16 +89,6 @@ writeServiceWorker(completeTree, {
   skipWaiting: true
 });
 ```
-
-Files can be filtered using regular expressions.
-```JavaScript
-{
-  excludePaths: ['index.html', new RegExp(/.\.map$/)],
-  includePaths: ['']
-}
-```
-
-
 
 Upgrade your index.html
 -----------------------
@@ -98,7 +107,7 @@ If you're not using Ember.js, you can use the following code:
           });
     } else {
         alert('service worker not supported');
-    }      
+    }
   </script>
 </html>
 ```

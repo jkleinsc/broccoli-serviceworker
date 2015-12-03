@@ -1,3 +1,14 @@
 {
+  "predef": [
+    "CACHE_PREFIX",
+    "CACHE_VERSION",
+    "Promise",
+    "Request",
+    "caches",
+    "logDebug",
+    "navigator",
+    "self",
+    "toolbox"
+  ],
   "node": true
 }
