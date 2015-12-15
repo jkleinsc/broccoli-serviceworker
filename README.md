@@ -14,7 +14,7 @@ Usage for Ember Cli
 `ember install broccoli-serviceworker`
 
 ###Configuration
-By default the service worker will be generated for production builds and the service worker registration logic will be added to your index.html automatically.  Additionally, you can further customize broccoli-serviceworker by setting configurations in your environment.js file:
+By default the service worker will be generated for production builds and the service worker registration logic will be added to your index.html automatically.  If you wish to add your own logic to the generated service worker, you can place that code in .js files in ***app/serviceworkers***.  Your code will have full access to [Service Worker Toolbox](https://github.com/GoogleChrome/sw-toolbox) as well as any included tools that you specify with the **swIncludeFiles** option.  Additionally, you can further customize broccoli-serviceworker by setting configurations in your environment.js file:
 ```JavaScript
 //app/config/environment.js
 
@@ -31,7 +31,10 @@ ENV.serviceWorker = {
   ],
   includeRegistration: true,
   serviceWorkerFile: "service-worker.js",
-  skipWaiting: true
+  skipWaiting: true,
+  swIncludeFiles: [
+    'bower_components/pouchdb/dist/pouchdb.js'
+  ]
 };
 ```
 The following options are available:
@@ -49,6 +52,7 @@ The following options are available:
 * **fallback** - Array of URLs with fallbacks when the resource isn't available via network or cache.
 * **dynamicCache** - List of URLs that should use a network first strategy that falls back to a cached version of the response if the network is unavailable.  For more details, see the details on [sw-toolbox's networkFirst strategy](https://github.com/GoogleChrome/sw-toolbox#user-content-toolboxnetworkfirst).
 * **skipWaiting** - Allows a simple page refresh to update the app.  Defaults to true.
+* **swIncludeFiles** - Array of files to include in the generated service worker.  This is intended to allow inclusion of vendor files in your service worker.  For example, if you wanted to run [PouchDB](http://pouchdb.com/) replication in a service worker, you need to include PouchDB in your service worker.
 
 
 Usage for Broccoli.js
@@ -89,6 +93,8 @@ writeServiceWorker(completeTree, {
   skipWaiting: true
 });
 ```
+One additional option is available for usage with Broccoli.js:
+* **swIncludeTree** - Broccoli tree of files to include in the generated service worker.
 
 Upgrade your index.html
 -----------------------
