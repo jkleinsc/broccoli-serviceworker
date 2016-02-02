@@ -8,7 +8,9 @@
     "logDebug",
     "navigator",
     "self",
-    "toolbox"
+    "toolbox",
+    "window"
   ],
+  "esnext": true,
   "node": true
 }
