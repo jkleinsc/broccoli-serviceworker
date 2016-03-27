@@ -28,10 +28,10 @@
   "dependencies": {
     "broccoli-funnel": "~1.0.1",
     "broccoli-kitchen-sink-helpers": "~0.3.1",
-    "broccoli-merge-trees": "~1.0.0",
+    "broccoli-merge-trees": "~1.1.1",
     "broccoli-writer": "~0.1.1",
     "rsvp": "^3.1.0",
     "stringifile": "^0.1.1",
-    "sw-toolbox": "^3.0.1"
+    "sw-toolbox": "^3.1.1"
   }
 }
