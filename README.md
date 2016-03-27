@@ -26,7 +26,7 @@ ENV.serviceWorker = {
   fallback: [
     '/online.html /offline.html'
   ],
-  dynamicCache: [
+  networkFirstURLs: [
     '/api/todos'
   ],
   includeRegistration: true,
@@ -50,7 +50,25 @@ The following options are available:
 * **includeRegistration** -- Automatically add the service worker registration script using contentFor to place the script in body-footer.  Defaults to true.
 * **serviceWorkerFile** - Name of the service worker file to generate.  If **includeRegistration** is set to true, this setting is unused.  Defaults to *service-worker.js*.
 * **fallback** - Array of URLs with fallbacks when the resource isn't available via network or cache.
-* **dynamicCache** - List of URLs that should use a network first strategy that falls back to a cached version of the response if the network is unavailable.  For more details, see the details on [sw-toolbox's networkFirst strategy](https://github.com/GoogleChrome/sw-toolbox#user-content-toolboxnetworkfirst). Optionally this can be an array of objects in the format `{ route: '/api/todos', options: { origin: 'https://api.example.com' } }`. Options are passed to the [route handler](https://github.com/GoogleChrome/sw-toolbox#methods) and are available for example to specify a different origin domain.
+* **Routing Options** - The following options allow you to specify routes that use [sw-toolbox's built-in handlers](https://github.com/GoogleChrome/sw-toolbox#built-in-handlers).  Each of these options accepts an array of URLs that can be strings or [regular expressions](https://github.com/GoogleChrome/sw-toolbox#regular-expression-routes).
+  * **cacheFirstURLs** -- List of URLS that should pull from cache first and then fallback to network if it isn't in cache.  For more details, see the details on [sw-toolbox's cacheFirst strategy](https://github.com/GoogleChrome/sw-toolbox#toolboxcachefirst).
+  * **cacheOnlyURLs** - List of URLs that should resolve the request from the cache, or fail.  For more details, see the details on [sw-toolbox's cacheOnly strategy](https://github.com/GoogleChrome/sw-toolbox#toolboxcacheonly).
+  * **fastestURLs** -- List of URLS that should pull from network and cache and deliver the fastest response.  For more details, see the details on [sw-toolbox's fastest strategy](https://github.com/GoogleChrome/sw-toolbox#toolboxfastest).
+  * **networkFirstURLs** - List of URLs that should use a network first strategy that falls back to a cached version of the response if the network is unavailable.  For more details, see the details on [sw-toolbox's networkFirst strategy](https://github.com/GoogleChrome/sw-toolbox#user-content-toolboxnetworkfirst).
+  * If additional configuration is desired for the above routing options, instead of using URLs, you can pass a configuration object:
+  Optionally they can be an array of objects in the format:
+  ```javascript
+  {
+    route: '/api/todos',
+    method: 'any',
+    options: {
+      origin: 'https://api.example.com'
+    }
+  }
+  ```
+    * **route** - the url or regular expression for the route.
+    * **method** - the HTTP method for the route.  Defaults to **any** which matches all HTTP methods.
+    * **options** - passed to the [route handler](https://github.com/GoogleChrome/sw-toolbox#methods) and are available for example to specify a different origin domain.
 * **skipWaiting** - Allows a simple page refresh to update the app.  Defaults to true.
 * **swIncludeFiles** - Array of files to include in the generated service worker.  This is intended to allow inclusion of vendor files in your service worker.  For example, if you wanted to run [PouchDB](http://pouchdb.com/) replication in a service worker, you need to include PouchDB in your service worker.
 
@@ -87,7 +105,7 @@ writeServiceWorker(completeTree, {
   fallback: [
     '/api/states /api/offlineStates'
   ],
-  dynamicCache: [
+  networkFirstURLs: [
     '/api/todos'
   ],
   skipWaiting: true
