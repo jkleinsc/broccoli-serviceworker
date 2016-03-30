@@ -21,7 +21,7 @@ By default the service worker will be generated for production builds and the se
 ENV.serviceWorker = {
   enabled: true,
   debug: true,
-  precacheURLs: ['/mystaticresouce'],
+  precacheURLs: ['/mystaticresource'],
   excludePaths: ['test.*', 'robots.txt',],
   fallback: [
     '/online.html /offline.html'
