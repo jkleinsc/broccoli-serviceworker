@@ -1,7 +1,18 @@
 # Change Log
 
-## [0.1.1](https://github.com/jkleinsc/broccoli-serviceworker/tree/0.1.1) (2016-09-12)
+## [0.1.2](https://github.com/jkleinsc/broccoli-serviceworker/tree/0.1.2) (2016-10-05)
 
+[Full Changelog](https://github.com/jkleinsc/broccoli-serviceworker/compare/0.1.1...0.1.2)
+
+**Closed issues:**
+
+- swIncludeFiles: join with ; when concatinating files [\#34](https://github.com/jkleinsc/broccoli-serviceworker/issues/34)
+
+**Merged pull requests:**
+
+- swIncludeFiles: join with ; when concatinating files [\#35](https://github.com/jkleinsc/broccoli-serviceworker/pull/35) ([gr2m](https://github.com/gr2m))
+
+## [0.1.1](https://github.com/jkleinsc/broccoli-serviceworker/tree/0.1.1) (2016-09-12)
 [Full Changelog](https://github.com/jkleinsc/broccoli-serviceworker/compare/0.1.0...0.1.1)
 
 **Closed issues:**
