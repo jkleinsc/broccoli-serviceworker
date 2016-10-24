@@ -1,12 +1,25 @@
 # Change Log
 
-## [0.1.2](https://github.com/jkleinsc/broccoli-serviceworker/tree/0.1.2) (2016-10-05)
+## [0.1.3](https://github.com/jkleinsc/broccoli-serviceworker/tree/0.1.3) (2016-10-24)
 
+[Full Changelog](https://github.com/jkleinsc/broccoli-serviceworker/compare/0.1.2...0.1.3)
+
+**Closed issues:**
+
+- Support assets on a CDN [\#33](https://github.com/jkleinsc/broccoli-serviceworker/issues/33)
+
+**Merged pull requests:**
+
+- bump sw-toolbox and import correct map file [\#37](https://github.com/jkleinsc/broccoli-serviceworker/pull/37) ([miguelcobain](https://github.com/miguelcobain))
+
+## [0.1.2](https://github.com/jkleinsc/broccoli-serviceworker/tree/0.1.2) (2016-10-05)
 [Full Changelog](https://github.com/jkleinsc/broccoli-serviceworker/compare/0.1.1...0.1.2)
 
 **Closed issues:**
 
 - swIncludeFiles: join with ; when concatinating files [\#34](https://github.com/jkleinsc/broccoli-serviceworker/issues/34)
+- sw-toolbox.js cannot be imported when offline [\#29](https://github.com/jkleinsc/broccoli-serviceworker/issues/29)
+- Handle manifest file [\#28](https://github.com/jkleinsc/broccoli-serviceworker/issues/28)
 
 **Merged pull requests:**
 
