@@ -34,7 +34,10 @@ ENV.serviceWorker = {
   skipWaiting: true,
   swIncludeFiles: [
     'bower_components/pouchdb/dist/pouchdb.js'
-  ]
+  ],
+  swEnvironment: {
+    foo: ENV.foo,
+  }
 };
 ```
 The following options are available:
@@ -52,6 +55,7 @@ The following options are available:
 * **fallback** - Array of URLs with fallbacks when the resource isn't available via network or cache.
 * **skipWaiting** - Allows a simple page refresh to update the app.  Defaults to true.
 * **swIncludeFiles** - Array of files to include in the generated service worker.  This is intended to allow inclusion of vendor files in your service worker.  For example, if you wanted to run [PouchDB](http://pouchdb.com/) replication in a service worker, you need to include PouchDB in your service worker.
+* **swEnvironment** - object that will be injected as-is in the service worker script as a top-level `swEnvironment` variable.
 
 ####Routing Options
 The following options allow you to specify routes that use [sw-toolbox's built-in handlers](https://github.com/GoogleChrome/sw-toolbox#built-in-handlers).  Each of these options accepts an array of URLs that can be strings or [regular expressions](https://github.com/GoogleChrome/sw-toolbox#regular-expression-routes).
