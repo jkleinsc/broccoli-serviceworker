@@ -78,6 +78,11 @@ The following options allow you to specify routes that use [sw-toolbox's built-i
   * **method** - the HTTP method for the route.  Defaults to **any** which matches all HTTP methods.
   * **options** - passed to the [route handler](https://github.com/GoogleChrome/sw-toolbox#methods) and are available for example to specify a different origin domain.
 
+####Hooks
+The following hooks are available to your service worker code. Implement a hook by defining a `function` by the hook's name and it will be called.
+
+* `brocswPostDeleteCacheHook(cacheName)` -- When a new version of the service worker is loaded, old caches are automatically deleted. This hook is called for each stale cache right after it has been deleted. This hook must return a `Promise`.
+
 Usage for Broccoli.js
 ---------------------
 
