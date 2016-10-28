@@ -1,6 +1,6 @@
 {
   "name": "broccoli-serviceworker",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "description": "A broccoli plugin automating ServiceWorker file creation for Broccoli and Ember.js",
   "main": "lib/service-worker.js",
   "ember-addon": {

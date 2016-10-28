@@ -1,7 +1,20 @@
 # Change Log
 
-## [0.1.3](https://github.com/jkleinsc/broccoli-serviceworker/tree/0.1.3) (2016-10-24)
+## [0.1.4](https://github.com/jkleinsc/broccoli-serviceworker/tree/0.1.4)
 
+[Full Changelog](https://github.com/jkleinsc/broccoli-serviceworker/compare/0.1.3...0.1.4)
+
+**Closed issues:**
+
+- Unable to build: missing sw-toolbox.js.map [\#42](https://github.com/jkleinsc/broccoli-serviceworker/issues/42)
+- Ability to pass environment variables to the service worker [\#39](https://github.com/jkleinsc/broccoli-serviceworker/issues/39)
+
+**Merged pull requests:**
+
+- Ability to provide environment variables to service worker. [\#41](https://github.com/jkleinsc/broccoli-serviceworker/pull/41) ([bourquep](https://github.com/bourquep))
+- Implemented a cache post-delete hook. [\#40](https://github.com/jkleinsc/broccoli-serviceworker/pull/40) ([bourquep](https://github.com/bourquep))
+
+## [0.1.3](https://github.com/jkleinsc/broccoli-serviceworker/tree/0.1.3) (2016-10-24)
 [Full Changelog](https://github.com/jkleinsc/broccoli-serviceworker/compare/0.1.2...0.1.3)
 
 **Closed issues:**
