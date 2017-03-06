@@ -21,6 +21,7 @@ By default the service worker will be generated for production builds and the se
 ENV.serviceWorker = {
   enabled: true,
   debug: true,
+  sourcemaps: true,
   precacheURLs: ['/mystaticresource'],
   excludePaths: ['test.*', 'robots.txt',],
   fallback: [
@@ -43,6 +44,7 @@ ENV.serviceWorker = {
 The following options are available:
 * **enabled** - Generate service worker.  Defaults to true in production.
 * **debug** - Display debug messages in console.
+* **sourcemaps** - Boolean that defines if sourcemaps should be generated. Defaults to the same value of debug.
 * **precacheURLs** - Array of URLs to precache and always serve from the cache.  broccoli-serviceworker will automatically add all Ember app resources (e.g. files in dist) as precached URLs unless explictly excluded in excludePaths.
 * **excludePaths** - Array of paths to exclude from precache.  Files can be filtered using regular expressions.
 ```JavaScript
