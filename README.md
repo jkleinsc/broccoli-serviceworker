@@ -78,7 +78,7 @@ The following options allow you to specify routes that use [sw-toolbox's built-i
   ```
   * **route** - the url or regular expression for the route.
   * **method** - the HTTP method for the route.  Defaults to **any** which matches all HTTP methods.
-  * **options** - passed to the [route handler](https://github.com/GoogleChrome/sw-toolbox#methods) and are available for example to specify a different origin domain.
+  * **options** - passed to the [route handler](https://github.com/GoogleChrome/sw-toolbox#methods) and are available for example to specify a different origin domain (can use regular expression).
 
 ####Hooks
 The following hooks are available to your service worker code. Implement a hook by defining a `function` by the hook's name and it will be called.
