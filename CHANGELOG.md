@@ -1,7 +1,19 @@
 # Change Log
 
-## [0.1.4](https://github.com/jkleinsc/broccoli-serviceworker/tree/0.1.4)
+## [0.1.5](https://github.com/jkleinsc/broccoli-serviceworker/tree/0.1.5)
 
+[Full Changelog](https://github.com/jkleinsc/broccoli-serviceworker/compare/0.1.4...0.1.5)
+
+**Closed issues:**
+
+- Service worker fail to build with --prod , when there is ES6 code [\#45](https://github.com/jkleinsc/broccoli-serviceworker/issues/45)
+
+**Merged pull requests:**
+
+- Add option to define if sourcemaps should be generated fixes \#42 [\#48](https://github.com/jkleinsc/broccoli-serviceworker/pull/48) ([urbany](https://github.com/urbany))
+- Origin option can be regular expression [\#47](https://github.com/jkleinsc/broccoli-serviceworker/pull/47) ([cyk](https://github.com/cyk))
+
+## [0.1.4](https://github.com/jkleinsc/broccoli-serviceworker/tree/0.1.4) (2016-10-28)
 [Full Changelog](https://github.com/jkleinsc/broccoli-serviceworker/compare/0.1.3...0.1.4)
 
 **Closed issues:**
