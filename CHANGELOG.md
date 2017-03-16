@@ -2,7 +2,7 @@
 
 ## [0.1.6](https://github.com/jkleinsc/broccoli-serviceworker/tree/HEAD) (2017-03-16)
 
-[Full Changelog](https://github.com/jkleinsc/broccoli-serviceworker/compare/0.1.5...[0.1.6)
+[Full Changelog](https://github.com/jkleinsc/broccoli-serviceworker/compare/0.1.5...0.1.6)
 
 **Closed issues:**
 
