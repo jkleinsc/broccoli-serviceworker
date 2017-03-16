@@ -1,7 +1,15 @@
 # Change Log
 
-## [0.1.5](https://github.com/jkleinsc/broccoli-serviceworker/tree/0.1.5)
+## [0.1.6](https://github.com/jkleinsc/broccoli-serviceworker/tree/HEAD) (2017-03-16)
 
+[Full Changelog](https://github.com/jkleinsc/broccoli-serviceworker/compare/0.1.5...[0.1.6)
+
+**Closed issues:**
+
+- After update, Serveiceworker failed to install:  [\#44](https://github.com/jkleinsc/broccoli-serviceworker/issues/44)
+- A page refresh does not update the app [\#43](https://github.com/jkleinsc/broccoli-serviceworker/issues/43)
+
+## [0.1.5](https://github.com/jkleinsc/broccoli-serviceworker/tree/0.1.5) (2017-03-06)
 [Full Changelog](https://github.com/jkleinsc/broccoli-serviceworker/compare/0.1.4...0.1.5)
 
 **Closed issues:**
