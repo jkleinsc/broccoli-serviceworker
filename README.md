@@ -13,7 +13,7 @@ Usage for Ember Cli
 
 `ember install broccoli-serviceworker`
 
-###Configuration
+### Configuration
 By default the service worker will be generated for production builds and the service worker registration logic will be added to your index.html automatically.  If you wish to add your own logic to the generated service worker, you can place that code in .js files in ***app/serviceworkers***.  Your code will have full access to [Service Worker Toolbox](https://github.com/GoogleChrome/sw-toolbox) as well as any included tools that you specify with the **swIncludeFiles** option.  Additionally, you can further customize broccoli-serviceworker by setting configurations in your environment.js file:
 ```JavaScript
 //app/config/environment.js
@@ -59,7 +59,7 @@ The following options are available:
 * **swIncludeFiles** - Array of files to include in the generated service worker.  This is intended to allow inclusion of vendor files in your service worker.  For example, if you wanted to run [PouchDB](http://pouchdb.com/) replication in a service worker, you need to include PouchDB in your service worker.
 * **swEnvironment** - object that will be injected as-is in the service worker script as a top-level `swEnvironment` variable.
 
-####Routing Options
+#### Routing Options
 The following options allow you to specify routes that use [sw-toolbox's built-in handlers](https://github.com/GoogleChrome/sw-toolbox#built-in-handlers).  Each of these options accepts an array of URLs that can be strings or [regular expressions](https://github.com/GoogleChrome/sw-toolbox#regular-expression-routes).
 * **cacheFirstURLs** -- List of URLS that should pull from cache first and then fallback to network if it isn't in cache.  For more details, see the details on [sw-toolbox's cacheFirst strategy](https://github.com/GoogleChrome/sw-toolbox#toolboxcachefirst).
 * **cacheOnlyURLs** - List of URLs that should resolve the request from the cache, or fail.  For more details, see the details on [sw-toolbox's cacheOnly strategy](https://github.com/GoogleChrome/sw-toolbox#toolboxcacheonly).
@@ -80,7 +80,7 @@ The following options allow you to specify routes that use [sw-toolbox's built-i
   * **method** - the HTTP method for the route.  Defaults to **any** which matches all HTTP methods.
   * **options** - passed to the [route handler](https://github.com/GoogleChrome/sw-toolbox#methods) and are available for example to specify a different origin domain (can use regular expression).
 
-####Hooks
+#### Hooks
 The following hooks are available to your service worker code. Implement a hook by defining a `function` by the hook's name and it will be called.
 
 * `brocswPostDeleteCacheHook(cacheName)` -- When a new version of the service worker is loaded, old caches are automatically deleted. This hook is called for each stale cache right after it has been deleted. This hook must return a `Promise`.
