@@ -32,6 +32,6 @@
     "broccoli-writer": "~0.1.1",
     "rsvp": "^3.1.0",
     "stringifile": "^0.1.1",
-    "sw-toolbox": "3.4.0"
+    "sw-toolbox": "3.6.0"
   }
 }
